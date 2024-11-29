@@ -1,29 +1,55 @@
 #include <iostream>
-#include <array>
 using namespace std;
+
 int main()
 {
-    int N, i;
-    int number[N] ;
-
-    cout<< "Enter a natural number : ";
-    cin>> N;
-    cin>> number[N];
-    if (N < 0)
+    int N, number;
+    int Sum_K = 0; 
+    int Pro_K = 1; 
+    cout << "enter N : ";
+    cin >> N;
+    for (int i = 0; i < N; i++)
     {
-        cout<<"The number must be positive."<<endl;
-        return 0;
-    }
-    i = 1;
-    while (i*i <= number[N])
-    {
-        if (i*i == number[N])
+        cin >> number; 
+        int K = 1;     
+        while (K * K < number)
         {
-            cout<<number[N]<<" is a perfect square. Its square root is "<<i<<"."<< endl;
-            return 0;
+            K++;
         }
-        i=i+1;
+        if (K * K == number)
+        {
+            cout << number << " ";
+            Sum_K += K;
+            Pro_K *= K;
+        }
     }
-    cout<< number[N] <<" is not a perfect square."<< endl;
+    cout << Sum_K << endl
+         << Pro_K << endl;
+    int Sum_root = 1;
+    while (Sum_root * Sum_root < Sum_K)
+    {
+        Sum_root++;
+    }
+    if (Sum_root * Sum_root == Sum_K)
+    {
+        cout << Sum_K << " is a perfect sequare ." << endl;
+    }
+    else
+    {
+        cout << Sum_K << " is not perfect square ." << endl;
+    }
+    int Pro_root = 1;
+    while (Pro_root * Pro_root < Pro_K)
+    {
+        Pro_root++;
+    }
+    if (Pro_root * Pro_root == Pro_K)
+    {
+        cout << Pro_K << " is a perfect sequare ." << endl;
+    }
+    else
+    {
+        cout << Pro_K << " is not perfect sequare ." << endl;
+    }
     return 0;
 }

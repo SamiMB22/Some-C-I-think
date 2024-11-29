@@ -1,4 +1,8 @@
+#include <SFML/Graphics.hpp>
 #include <iostream>
+#include <thread>
+#include <cmath>
+
 using namespace std;
 int main()
 {
